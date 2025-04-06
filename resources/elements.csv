@@ -1,0 +1,73 @@
+Outer HTML
+"<input id=""search"" hx-get=""/search"" hx-trigger=""keyup changed delay:100ms, focus"" hx-target=""#searchpreview"" hx-swap=""innerHTML"" name=""q"" class=""resize-none rounded-full border-0 py-2.5 bg-transparent text-sm w-full placeholder:text-neutral-500 focus:outline-none focus:ring-0"" placeholder=""Search models"" autocomplete=""off"" hx-on:keydown=""
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        window.location.href = '/search?q=' + encodeURIComponent(this.value);
+        return;
+      }
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        this.value = '';
+        this.blur();
+        htmx.addClass('#searchpreview', 'hidden');
+        return;
+      }
+      if (event.key === 'Tab') { 
+        htmx.addClass('#searchpreview', 'hidden');
+        return;
+      }
+      if (event.key === 'ArrowDown') {
+        let first = document.querySelector('#search-preview-list a:first-of-type');
+        first?.focus();
+        event.preventDefault();
+      }
+      if (event.key === 'ArrowUp') {
+        let last = document.querySelector('#view-all-link');
+        last?.focus();
+        event.preventDefault();
+      }
+      htmx.removeClass('#searchpreview', 'hidden');
+    "" hx-on:focus=""
+      htmx.removeClass('#searchpreview', 'hidden')
+    "">"
+"<input type=""checkbox"" id=""menu"" class=""peer hidden"">"
+"<a href=""/"" class=""z-50"">
+      <img src=""/public/ollama.png"" class=""w-8"" alt=""Ollama"">
+    </a>"
+"<a class=""hover:underline focus:underline focus:outline-none focus:ring-0"" target=""_blank"" href=""https://discord.com/invite/ollama"">Discord</a>"
+"<a class=""hover:underline focus:underline focus:outline-none focus:ring-0"" target=""_blank"" href=""https://github.com/ollama/ollama"">GitHub</a>"
+"<a class=""hover:underline focus:underline focus:outline-none focus:ring-0"" href=""/models"">Models</a>"
+"<a class=""flex cursor-pointer items-center rounded-full bg-white border border-neutral-300 text-lg px-4 py-1 text-black hover:bg-neutral-50 whitespace-nowrap focus:bg-neutral-50"" href=""/signin"">Sign in</a>"
+"<a class=""flex cursor-pointer items-center rounded-full bg-neutral-800 text-lg px-4 py-1 text-white hover:bg-black whitespace-nowrap focus:bg-black"" href=""/download"">Download</a>"
+"<a class=""px-6"" href=""/models"">Models</a>"
+"<a class=""px-6"" href=""https://discord.com/invite/ollama"">Discord</a>"
+"<a class=""px-6"" href=""https://github.com/ollama/ollama"">GitHub</a>"
+"<a class=""px-6"" href=""/download"">Download</a>"
+"<a href=""/signin"" class=""block px-6"">Sign in</a>"
+"<a class=""underline underline-offset-2 whitespace-nowrap"" href=""/library/llama3.3"">Llama 3.3</a>"
+"<a class=""underline underline-offset-2"" href=""/library/deepseek-r1"">DeepSeek-R1</a>"
+"<a class=""underline underline-offset-2 hover:text-black focus:ring-0 focus:ring-transparent focus:outline-none focus:text-black"" href=""/library/phi4"">Phi-4</a>"
+"<a class=""underline underline-offset-2 hover:text-black focus:ring-0 focus:ring-transparent focus:outline-none focus:text-black"" href=""/library/mistral"">Mistral</a>"
+"<a class=""underline underline-offset-2 hover:text-black focus:ring-0 focus:ring-transparent focus:outline-none focus:text-black whitespace-nowrap"" href=""/library/gemma3"">Gemma 3</a>"
+"<a href=""/download"" class=""hidden sm:flex cursor-pointer items-center rounded-3xl bg-neutral-800 px-6 py-2 text-xl text-white hover:bg-black focus:outline-none"">
+            Download&nbsp;&nbsp;↓
+          </a>"
+"<a href=""/models"" class=""flex sm:hidden cursor-pointer items-center rounded-3xl bg-neutral-800 px-6 py-2 text-xl text-white hover:bg-black focs:bg-black focus:ring-0 focus:ring-transparent focus:outline-none"">
+            Explore models&nbsp;&nbsp;→
+          </a>"
+"<a href=""/blog"" class=""hover:underline"">Blog</a>"
+"<a href=""https://github.com/ollama/ollama/tree/main/docs"" class=""hover:underline"">Docs</a>"
+"<a href=""https://github.com/ollama/ollama"" class=""hover:underline"">GitHub</a>"
+"<a href=""https://discord.com/invite/ollama"" class=""hover:underline"">Discord</a>"
+"<a href=""https://twitter.com/ollama"" class=""hover:underline"">X (Twitter)</a>"
+"<a href=""https://lu.ma/ollama"" class=""hover:underline"">Meetups</a>"
+"<a href=""/download"" class=""hover:underline"">Download</a>"
+"<a href=""/blog"" class=""hover:underline"">Blog</a>"
+"<a href=""/download"" class=""hover:underline"">Download</a>"
+"<a href=""https://github.com/ollama/ollama/tree/main/docs"" class=""hover:underline"">Docs</a>"
+"<a href=""https://github.com/ollama/ollama"" class=""hover:underline"">GitHub</a>"
+"<a href=""https://discord.com/invite/ollama"" class=""hover:underline"">Discord</a>"
+"<a href=""https://twitter.com/ollama"" class=""hover:underline"">X (Twitter)</a>"
+"<a href=""https://lu.ma/ollama"" class=""hover:underline"">Meetups</a>"
+"<img src=""/public/ollama.png"" class=""w-8"" alt=""Ollama"">"
+"<img src=""/public/ollama.png"" class=""w-16"" alt=""ollama logo"">"
